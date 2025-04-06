@@ -1,0 +1,162 @@
+{
+  "v": 6,
+  "name": "Interactive Edu Platform",
+  "folders": [],
+  "requests": [
+    {
+      "v": "11",
+      "name": "Create Room",
+      "method": "POST",
+      "endpoint": "http://127.0.0.1:5000/create-room",
+      "params": [],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "none",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "name": "Create Test",
+      "method": "POST",
+      "endpoint": "http://127.0.0.1:5000/create-test",
+      "params": [],
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "active": true
+        }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "none",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"room_code\": 12345,\n  \"questions\": [\n    {\n      \"question\": \"Какой цвет неба?\",\n      \"options\": [\"Синий\", \"Зелёный\"],\n      \"type\": \"choice\"\n    },\n    {\n      \"question\": \"Сколько будет 2+2?\",\n      \"type\": \"text\"\n    }\n  ]\n}"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "name": "Join Room",
+      "method": "POST",
+      "endpoint": "http://127.0.0.1:5000/join-room",
+      "params": [],
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "active": true
+        }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "none",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"room_code\": 12345,\n  \"student_name\": \"Иван\"\n}"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "name": "Submit Answers",
+      "method": "POST",
+      "endpoint": "http://127.0.0.1:5000/submit-answers",
+      "params": [],
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "active": true
+        }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "none",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"room_code\": 12345,\n  \"student_name\": \"Иван\",\n  \"answers\": {\n    \"1\": \"Синий\",\n    \"2\": \"4\"\n  }\n}"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "name": "Start Test",
+      "method": "POST",
+      "endpoint": "http://127.0.0.1:5000/start-test",
+      "params": [],
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "active": true
+        }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "none",
+        "authActive": true
+      },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\n  \"room_code\": 12345\n}"
+      },
+      "requestVariables": [],
+      "responses": {}
+    },
+    {
+      "v": "11",
+      "name": "Export Results",
+      "method": "GET",
+      "endpoint": "http://127.0.0.1:5000/export-results",
+      "params": [
+        {
+          "key": "room_code",
+          "value": "12345",
+          "active": true
+        }
+      ],
+      "headers": [],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": {
+        "authType": "none",
+        "authActive": true
+      },
+      "body": {
+        "contentType": null,
+        "body": null
+      },
+      "requestVariables": [],
+      "responses": {}
+    }
+  ],
+  "auth": {
+    "authType": "none",
+    "authActive": true
+  },
+  "headers": []
+}

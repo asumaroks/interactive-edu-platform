@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Edu Platform</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Interactive Edu Platform</h1>
+
+    <section>
+        <h2>1. Создать комнату</h2>
+        <button onclick="createRoom()">Создать комнату</button>
+        <p id="roomCode"></p>
+    </section>
+
+    <section>
+        <h2>2. Создать тест</h2>
+        <input type="text" id="testRoomCode" placeholder="Код комнаты">
+        <textarea id="questions" placeholder='[{"question": "Какой цвет неба?", "options": ["Синий", "Зелёный"], "type": "choice"}]'></textarea>
+        <strong>Пример:</strong> <code>[{"question": "Какой цвет неба?", "options": ["Синий", "Зелёный"], "type": "choice"}]</code>
+        <button onclick="createTest()">Создать тест</button>
+        <p id="testMessage"></p>
+    </section>
+
+    <section>
+        <h2>3. Подключить ученика</h2>
+        <input type="text" id="joinRoomCode" placeholder="Код комнаты">
+        <input type="text" id="studentName" placeholder="Имя ученика">
+        <button onclick="joinRoom()">Подключить</button>
+        <p id="joinMessage"></p>
+    </section>
+
+    <section>
+        <h2>4. Отправить ответы</h2>
+        <input type="text" id="answerRoomCode" placeholder="Код комнаты">
+        <input type="text" id="answerStudentName" placeholder="Имя ученика">
+        <textarea id="answers" placeholder='{"1": "Синий", "2": "4"}'></textarea>
+        <strong>Пример:</strong> <code>{"1": "Синий", "2": "4"}</code>
+        <button onclick="submitAnswers()">Отправить ответы</button>
+        <p id="answerMessage"></p>
+    </section>
+
+    <section>
+        <h2>5. Начать тест</h2>
+        <input type="text" id="startRoomCode" placeholder="Код комнаты">
+        <button onclick="startTest()">Начать тест</button>
+        <p id="startMessage"></p>
+    </section>
+
+    <section>
+        <h2>6. Экспортировать результаты</h2>
+        <input type="text" id="exportRoomCode" placeholder="Код комнаты">
+        <button onclick="exportResults()">Экспортировать</button>
+    </section>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
